@@ -1,10 +1,12 @@
 class Node:
-    def __init__(self, data):
+    def __init__(self, data, priority):
         self.data = data
         self.next = None
+        self.priority = priority
 
 
-class My_Queue:
+class Priority_Queue:
+
     def __init__(self):
         self.head = None
         self.last = None

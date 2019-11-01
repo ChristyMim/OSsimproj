@@ -4,20 +4,23 @@ class Node:
         self.next = None
 
 
-class My_Queue:
+class My_Sorted:
+
     def __init__(self):
         self.head = None
-        self.last = None
 
-    def enqueue(self, data):
-        if self.last is None:
+    def sort(self, data):
+        temp = self.head
+
+        if self.head is None:
             self.head = Node(data)
-            self.last = self.head
         else:
-            self.last.next = Node(data)
-            self.last = self.last.next
+            # modify here
+            new_node = Node(data)
+            new_node.next = self.head
+            self.head = new_node
 
-    def dequeue(self):
+    def pop(self):
         if self.head is None:
             return None
         else:
@@ -25,7 +28,7 @@ class My_Queue:
             self.head = self.head.next
             return temp
 
-    def first(self):
+    def tail(self):
         return self.head.data
 
     def size(self):
@@ -42,8 +45,8 @@ class My_Queue:
         else:
             return False
 
-    def printqueue(self):
-        print("queue elements are:")
+    def print_List(self):
+        print("sorted elements are:")
         count = 1
         temp = self.head
 
