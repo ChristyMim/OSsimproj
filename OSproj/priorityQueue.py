@@ -11,12 +11,15 @@ class Priority_Queue:
         self.head = None
         self.last = None
 
-    def enqueue(self, data):
+    def enqueue(self, data, priority):
+        #temp = self.head
+        #new_node = Node(data, priority)
+
         if self.last is None:
-            self.head = Node(data)
+            self.head = Node(data, priority)
             self.last = self.head
         else:
-            self.last.next = Node(data)
+            self.last.next = Node(data, priority)
             self.last = self.last.next
 
     def dequeue(self):

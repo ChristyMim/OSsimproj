@@ -2,6 +2,7 @@ import numpy as np
 from queue import *
 from stack import *
 from sorted import *
+from priorityQueue import *
 
 array1 = np.random.randint(0, 100, 100)
 array2 = np.random.randint(0, 100, 100)
@@ -29,6 +30,7 @@ array5 = np.random.randint(1, 4, 100)
 myQueue = My_Queue()
 myStack = My_Stack()
 mySort = My_Sorted()
+mypriority = Priority_Queue()
 
 if __name__ == '__main__':
 
