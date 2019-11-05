@@ -44,7 +44,7 @@ class Priority_Queue:
         else:
             return False
 
-    def printqueue(self):
+    def print_priority(self):
         print("queue elements are:")
         count = 1
         temp = self.head

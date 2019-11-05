@@ -1,6 +1,7 @@
 import numpy as np
 from queue import *
 from stack import *
+from sorted import *
 
 array1 = np.random.randint(0, 100, 100)
 array2 = np.random.randint(0, 100, 100)
@@ -27,6 +28,7 @@ array5 = np.random.randint(1, 4, 100)
 
 myQueue = My_Queue()
 myStack = My_Stack()
+mySort = My_Sorted()
 
 if __name__ == '__main__':
 
@@ -42,5 +44,8 @@ if __name__ == '__main__':
     myStack.printstack()
     print('\n')
 
+    for data in array3:
+        mySort.sort(array3[data])
 
-
+    mySort.print_list()
+    print('\n')

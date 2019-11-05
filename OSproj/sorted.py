@@ -10,15 +10,26 @@ class My_Sorted:
         self.head = None
 
     def sort(self, data):
-        temp = self.head
+        current = self.head
 
-        if self.head is None:
-            self.head = Node(data)
-        else:
-            # modify here
+        if current is None:
             new_node = Node(data)
-            new_node.next = self.head
             self.head = new_node
+            return
+
+        if current.data > data:
+            new_node = Node(data)
+            new_node.next = current
+            self.head = new_node
+            return
+
+        while current.next is not None:
+            if current.next.data > data:
+                break
+            current = current.next
+        new_node = Node(data)
+        new_node.next = current.next
+        current.next = new_node
 
     def pop(self):
         if self.head is None:
@@ -28,7 +39,7 @@ class My_Sorted:
             self.head = self.head.next
             return temp
 
-    def tail(self):
+    def head(self):
         return self.head.data
 
     def size(self):
@@ -45,7 +56,7 @@ class My_Sorted:
         else:
             return False
 
-    def print_List(self):
+    def print_list(self):
         print("sorted elements are:")
         count = 1
         temp = self.head
