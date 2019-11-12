@@ -15,12 +15,34 @@ class Priority_Queue:
         #temp = self.head
         #new_node = Node(data, priority)
 
-        if self.last is None:
-            self.head = Node(data, priority)
-            self.last = self.head
-        else:
-            self.last.next = Node(data, priority)
-            self.last = self.last.next
+        # if self.last is None:
+        #     self.head = Node(data, priority)
+        #     self.last = self.head
+        # else:
+        #     self.last.next = Node(data, priority)
+        #     self.last = self.last.next
+
+        current = self.head
+
+        if current is None:
+            new_node = Node(data)
+            self.head = new_node
+            return
+
+        if current.data > data:
+            new_node = Node(data)
+            new_node.next = current
+            self.head = new_node
+            return
+
+        while current.next is not None:
+            if current.next.data > data:
+                break
+            current = current.next
+
+        new_node = Node(data)
+        new_node.next = current.next
+        current.next = new_node
 
     def dequeue(self):
         if self.head is None:
@@ -48,7 +70,7 @@ class Priority_Queue:
             return False
 
     def print_priority(self):
-        print("queue elements are:")
+        print("priority queue elements are:")
         count = 1
         temp = self.head
 

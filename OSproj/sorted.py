@@ -27,6 +27,7 @@ class My_Sorted:
             if current.next.data > data:
                 break
             current = current.next
+
         new_node = Node(data)
         new_node.next = current.next
         current.next = new_node
